@@ -1,8 +1,29 @@
 import { startPlayback } from "./audio-player.js";
+import * as acto1 from "./acto1.js";
+import * as acto2 from "./acto2.js";
+import * as acto3 from "./acto3.js";
 
 const dynamicRoot = document.getElementById("root");
 
 const loadedPages = {};
+
+function runPageInitScript(page) {
+  if (page === "acto1") {
+    acto1.init();
+  }
+
+  if (page === "acto2-parte1") {
+    acto2.init();
+  }
+
+  if (page === "acto2-parte2") {
+    acto2.init2();
+  }
+
+  if (page === "acto3") {
+    acto3.init();
+  }
+}
 
 function setPage({ text, page, lang }) {
   loadedPages[lang + "_" + page] = text;
@@ -13,6 +34,7 @@ function setPage({ text, page, lang }) {
     removeLinkListeners();
     setLinkListeners();
     window.scrollTo({ top: 0 });
+    runPageInitScript(page);
   }, 0);
 }
 
@@ -107,12 +129,15 @@ function setPageOnBodyFromUrl(url) {
 }
 
 function init() {
-  const initialState = { page: getPageFromUrl(window.location.pathname) };
-  history.replaceState(initialState, null, window.location.pathname);
+  const url = window.location.pathname;
+  const page = getPageFromUrl(url);
+  const initialState = { page };
+  history.replaceState(initialState, null, url);
   window.addEventListener("popstate", handlePopState);
   setLinkListeners();
-  setLangOnBodyFromUrl(window.location.pathname);
-  setPageOnBodyFromUrl(window.location.pathname);
+  setLangOnBodyFromUrl(url);
+  setPageOnBodyFromUrl(url);
+  runPageInitScript(page);
 }
 
 export { init };

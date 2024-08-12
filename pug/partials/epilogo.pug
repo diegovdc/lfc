@@ -1,0 +1,46 @@
+style.
+  .epilogue-text-container {
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  }
+  .epilogue-texto {
+  padding: 4px;
+  background-color: rgba(66, 66, 66, 0.3);
+  }
+  .menu-container {
+    display: none;
+  }
+script(src='https://unpkg.com/hydra-synth')
+script.
+  // create a new hydra-synth instance
+  var hydra = new Hydra({ detectAudio: false });
+  noise(4, 0.1, 1.2)
+  .modulate(src(o0))
+  .add(shape(66).color(1, 0, [0, 1].smooth()).repeat(10, 10).modulate(noise()))
+  .add(shape(66).color(1, [1,1,0].smooth(), 0).repeat(9, 9).modulate(noise()))
+  .kaleid(5)
+  .modulate(src(o0), 0.05)
+  .modulate(voronoi())
+  .out();
+.epilogue-text-container
+  .epilogue-texto
+    p
+      | The factory of Bol&iacute;var and Chimalpopoca collapsed, time collapsed as
+      | well. In this crisis-time we encountered memories unfolding
+      | indistinguishably from the present. Space collapsed as well, Bol&iacute;var
+      | 168 became San Antonio Abad. Who knows what other times and spaces
+      | were also folding into this critical point. Somehow the people of
+      | Mexico City were desperately looking for the bodies of workers from
+      | then and from now... and who knows what other geographies and
+      | calendars.
+    p
+      | Finding a body meant to find all bodies, all people crushed by
+      | capitalism.

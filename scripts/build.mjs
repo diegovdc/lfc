@@ -38,7 +38,14 @@ const options = { trans, dbES, dbEN };
 //////////
 // PAGES
 /////////
-const pages = ["index", "acto1", "acto2-parte1", "acto2-parte2", "acto3"];
+const pages = [
+  "index",
+  "acto1",
+  "acto2-parte1",
+  "acto2-parte2",
+  "acto3",
+  "epilogo",
+];
 
 function writePartialFile(lang, options, page) {
   writeFileSync(
