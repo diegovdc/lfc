@@ -30,13 +30,17 @@ async function loadPage(lang, page) {
 }
 
 function getLangFormhref(anchor) {
-  return anchor.href.split("/")[3];
+  return anchor.href.split("/")?.[3];
 }
 
 function registerLinkClick(e) {
   e.preventDefault();
-  const page = e.target.dataset.page;
-  const lang = getLangFormhref(e.target);
+  // if event was on a span inside the link
+  const anchor = e.target.closest("a");
+  const page = anchor.dataset.page;
+  console.log("🚀 ~ registerLinkClick ~ page:", page);
+  const lang = getLangFormhref(anchor);
+  console.log("🚀 ~ registerLinkClick ~ lang:", lang);
   loadPage(lang, page);
   if (e.target.dataset?.["startPlayback"]) {
     startPlayback();

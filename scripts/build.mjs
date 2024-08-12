@@ -16,7 +16,6 @@ function structureDB(key, lang, array) {
 }
 const db_ = createDB();
 const dbES = structureDB("id", "es", db_);
-console.log("🚀 ~ dbES:", dbES);
 const dbEN = structureDB("id", "en", db_);
 
 // delete dist directory if it exists
@@ -36,18 +35,32 @@ function trans(lang, db, key) {
 
 const options = { trans, dbES, dbEN };
 
+//////////
+// PAGES
+/////////
+const pages = ["index", "acto1", "acto2-parte1", "acto2-parte2", "acto3"];
+
+function writePartialFile(lang, options, page) {
+  writeFileSync(
+    `./dist/${lang}/partials/${page}.html`,
+    renderFile(`./pug/partials/${page}.pug`, options)
+  );
+}
+
 // write partials files
 function writePartialsFiles(lang, options) {
   mkdirSync(`./dist/${lang}/partials`, { recursive: true });
   const db = lang === "es" ? dbES : dbEN;
   options = { ...options, lang, trans2: (key) => trans(lang, db, key), db };
+  pages.forEach((page) => {
+    writePartialFile(lang, options, page);
+  });
+}
+
+function writePageFile(lang, options, page) {
   writeFileSync(
-    `./dist/${lang}/partials/index.html`,
-    renderFile("./pug/partials/index.pug", options)
-  );
-  writeFileSync(
-    `./dist/${lang}/partials/acto1.html`,
-    renderFile("./pug/partials/acto1.pug", options)
+    `./dist/${lang}/${page}.html`,
+    renderFile(`./pug/${page}.pug`, options)
   );
 }
 
@@ -55,15 +68,9 @@ function writePagesFiles(lang, options) {
   mkdirSync(`./dist/${lang}`, { recursive: true });
   const db = lang === "es" ? dbES : dbEN;
   options = { ...options, lang, trans2: (key) => trans(lang, db, key), db };
-  writeFileSync(
-    `./dist/${lang}/index.html`,
-    renderFile("./pug/index.pug", options)
-  );
-
-  writeFileSync(
-    `./dist/${lang}/acto1.html`,
-    renderFile("./pug/acto1.pug", options)
-  );
+  page.forEach((page) => {
+    writePageFile(lang, options, page);
+  });
 }
 
 writePartialsFiles("es", options);
