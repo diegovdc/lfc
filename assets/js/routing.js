@@ -1,3 +1,5 @@
+import { startPlayback } from "./audio-player.js";
+
 const dynamicRoot = document.getElementById("root");
 
 const loadedPages = {};
@@ -5,9 +7,11 @@ const loadedPages = {};
 function setPage({ text, page, lang }) {
   loadedPages[lang + "_" + page] = text;
   dynamicRoot.innerHTML = text;
+  document.body.dataset["lang"] = lang;
   setTimeout(() => {
     removeLinkListeners();
     setLinkListeners();
+    window.scrollTo({ top: 0 });
   }, 0);
 }
 
@@ -34,6 +38,9 @@ function registerLinkClick(e) {
   const page = e.target.dataset.page;
   const lang = getLangFormhref(e.target);
   loadPage(lang, page);
+  if (e.target.dataset?.["startPlayback"]) {
+    startPlayback();
+  }
   history.pushState({ page, lang }, null, `/${lang}/${page}.html`);
 }
 
@@ -66,11 +73,28 @@ function getPageFromUrl(url) {
   return parts[2]?.replace(".html", "") || "/"; // Assuming the URL structure is /lang/page.html
 }
 
+function getLangFromUrl(url) {
+  const parts = url.split("/");
+  const lang = parts[1];
+  if (lang === "es" || lang === "en") {
+    return lang;
+  }
+}
+
+function setLangOnBodyFromUrl(url) {
+  const lang = getLangFromUrl(url);
+  console.log("🚀 ~ setLangOnBodyFromUrl ~ document.body:", document.body);
+  if (lang) {
+    document.body.dataset["lang"] = lang;
+  }
+}
+
 function init() {
   const initialState = { page: getPageFromUrl(window.location.pathname) };
   history.replaceState(initialState, null, window.location.pathname);
   window.addEventListener("popstate", handlePopState);
   setLinkListeners();
+  setLangOnBodyFromUrl(window.location.pathname);
 }
 
 export { init };

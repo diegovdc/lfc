@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #111;
+  color: white;
+  font-size: 22px;
+  line-height: 1.5;
+  padding: 8px;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+html.epilogue,
+body.epilogue {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-page__title {
+  margin-top: 0;
+  padding-top: 8px;
+}
+
+.landing-page__contents {
+  background-color: transparent;
+  z-index: 1;
+  font-size: 40px;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.landing-page__link {
+  background-color: #ffff0077;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.landing-page__img {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 16px;
+}
+/* .landing-page__bg {
+  position: relative;
+  height: 80vh;
+  width: 80vh;
+  background-image: url("/assets/images/la-fabrica-colapsada.webp");
+  background-size: contain;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+} */
+
+.leaflet-container {
+  height: 600px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 600px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 48px;
+  padding-top: 32px;
+  margin-bottom: 32px;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+  margin-bottom: 64px;
+}
+.menu {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000000;
+  margin: auto;
+  display: none;
+}
+
+body[data-lang="es"] .menu__es {
+  display: flex;
+}
+
+body[data-lang="en"] .menu__es {
+  display: flex;
+}
+
+.menu > div {
+  background-color: #111;
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 30px;
+}
+
+.menu a > span {
+  display: block;
+}
+
+a {
+  color: #c00;
+}
+.go-to {
+  color: yellow;
+  text-transform: uppercase;
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.main-content {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-bottom: 32px;
+}
+
+.texto {
+  color: white;
+  margin-bottom: 16px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-bottom: 32px;
+}
+
+.mapa-text-container {
+  width: 100%;
+  display: flex;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+}
+
+.mapaybotones {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 32px;
+  justify-content: center;
+}
+
+.displayText {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-bottom: 32px;
+}
+.displayText:empty {
+  display: none;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.boton {
+  background-color: transparent;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid white;
+  appearance: none;
+  padding: 8px;
+  font-size: 16px;
+}
+
+@keyframes flashColor {
+  0% {
+    color: yellow;
+  }
+  100% {
+    color: white;
+  }
+}
+
+.flash-notice {
+  opacity: 0;
+  transition: all 2s;
+  animation: flashColor 1s infinite;
+  animation-timing-function: ease;
+
+  position: relative;
+  top: -16px;
+}
+
+.flash-notice__flash {
+  @media (max-width: 768px) {
+    opacity: 1;
+  }
+}

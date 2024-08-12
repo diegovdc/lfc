@@ -3,13 +3,15 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title La Fabrica Colapsada
+  link(href='/assets/css/main.css' rel='stylesheet')
   block styles
-body 
-  menu.main-menu
-    a.link-js(data-page='index') Index
-    a.link-js(data-page='acto1') Acto 1
-  audio(controls='')
+body
+  include partials/menu.pug
+  audio(id="audio-player")
     source(src='/assets/audio/no-dither.mp3' type='audio/mpeg')
   #root
     block root
+  include partials/menu.pug
   script(src='/assets/js/index.js', type='module')
+  script.
+    console.log(!{JSON.stringify(dbES)});
