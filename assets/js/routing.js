@@ -8,6 +8,7 @@ function setPage({ text, page, lang }) {
   loadedPages[lang + "_" + page] = text;
   dynamicRoot.innerHTML = text;
   document.body.dataset["lang"] = lang;
+  document.body.dataset["page"] = page;
   setTimeout(() => {
     removeLinkListeners();
     setLinkListeners();
@@ -16,6 +17,7 @@ function setPage({ text, page, lang }) {
 }
 
 async function loadPage(lang, page) {
+  lang = lang || localStorage.getItem("lang");
   if (page in loadedPages) {
     setPage({ text: loadedPages[lang + "_" + page], page, lang });
   }
@@ -38,9 +40,14 @@ function registerLinkClick(e) {
   // if event was on a span inside the link
   const anchor = e.target.closest("a");
   const page = anchor.dataset.page;
-  console.log("🚀 ~ registerLinkClick ~ page:", page);
   const lang = getLangFormhref(anchor);
-  console.log("🚀 ~ registerLinkClick ~ lang:", lang);
+  // if anchor has landing-page class, save the lang to the localStorage
+  if (anchor.classList.contains("landing-page")) {
+    localStorage.setItem("lang", lang);
+  }
+  if (!lang) {
+    console.warn("language is undefined", anchor);
+  }
   loadPage(lang, page);
   if (e.target.dataset?.["startPlayback"]) {
     startPlayback();
@@ -87,9 +94,15 @@ function getLangFromUrl(url) {
 
 function setLangOnBodyFromUrl(url) {
   const lang = getLangFromUrl(url);
-  console.log("🚀 ~ setLangOnBodyFromUrl ~ document.body:", document.body);
   if (lang) {
     document.body.dataset["lang"] = lang;
+  }
+}
+
+function setPageOnBodyFromUrl(url) {
+  const page = getPageFromUrl(url);
+  if (page) {
+    document.body.dataset["page"] = page;
   }
 }
 
@@ -99,6 +112,7 @@ function init() {
   window.addEventListener("popstate", handlePopState);
   setLinkListeners();
   setLangOnBodyFromUrl(window.location.pathname);
+  setPageOnBodyFromUrl(window.location.pathname);
 }
 
 export { init };

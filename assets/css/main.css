@@ -12,9 +12,12 @@ body {
   color: white;
   font-size: 22px;
   line-height: 1.5;
-  padding: 8px;
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
+}
+#root {
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 html.epilogue,
@@ -36,6 +39,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 16px;
 }
 
 .landing-page__title {
@@ -114,6 +118,10 @@ body[data-lang="es"] .menu__es {
 
 body[data-lang="en"] .menu__es {
   display: flex;
+}
+
+body[data-page="/"] .menu-container {
+  display: none;
 }
 
 .menu > div {

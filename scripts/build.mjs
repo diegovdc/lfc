@@ -68,7 +68,7 @@ function writePagesFiles(lang, options) {
   mkdirSync(`./dist/${lang}`, { recursive: true });
   const db = lang === "es" ? dbES : dbEN;
   options = { ...options, lang, trans2: (key) => trans(lang, db, key), db };
-  page.forEach((page) => {
+  pages.forEach((page) => {
     writePageFile(lang, options, page);
   });
 }
