@@ -2,6 +2,7 @@ import { startPlayback } from "./audio-player.js";
 import * as acto1 from "./acto1.js";
 import * as acto2 from "./acto2.js";
 import * as acto3 from "./acto3.js";
+import * as terremoto from "./terremoto.js";
 
 const dynamicRoot = document.getElementById("root");
 
@@ -22,6 +23,10 @@ function runPageInitScript(page) {
 
   if (page === "acto3") {
     acto3.init();
+  }
+
+  if (page === "terremoto") {
+    terremoto.init();
   }
 }
 

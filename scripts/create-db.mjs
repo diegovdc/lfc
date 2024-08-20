@@ -2,7 +2,10 @@ import { parse } from "csv-parse/sync";
 import fs from "fs";
 
 export function createDB() {
-  const data = fs.readFileSync("./data/WebsiteFabricaInfo.csv", "utf8");
+  const data = fs.readFileSync(
+    "./data/WebsiteFabricaInfo-AllTranslated.csv",
+    "utf8"
+  );
 
   const records = parse(data, {
     columns: true,

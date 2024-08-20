@@ -35,6 +35,14 @@ a:hover {
   text-decoration: underline;
 }
 
+.map-text-container {
+  display: none;
+}
+
+.map-text-container p {
+  margin-bottom: 16px;
+}
+
 .landing-page {
   display: flex;
   flex-direction: column;

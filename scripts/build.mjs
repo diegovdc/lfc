@@ -40,6 +40,7 @@ const options = { trans, dbES, dbEN };
 /////////
 const pages = [
   "index",
+  "terremoto",
   "acto1",
   "acto2-parte1",
   "acto2-parte2",
