@@ -84,7 +84,9 @@ a:hover {
 h1 {
   text-align: center;
   font-size: 48px;
+  margin-top: 0;
   padding-top: 32px;
+  padding-bottom: 0;
   margin-bottom: 32px;
 }
 
@@ -92,7 +94,6 @@ h1 {
   display: flex;
   justify-content: center;
   padding-top: 32px;
-  margin-bottom: 64px;
 }
 .menu {
   flex-wrap: wrap;
@@ -166,8 +167,9 @@ img {
   display: block;
 }
 
-.footer[data-page]:not([data-page="/"]) {
-  padding-bottom: 20px;
+body[data-page]:not([data-page="/"]) .footer {
+  min-height: 40px;
+  padding-bottom: 40px;
 }
 
 a {
