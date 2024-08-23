@@ -1,3 +1,4 @@
+import { setupFlashNotice } from "./helpers.js";
 import * as mapLib from "./map.js";
 
 const locations = {
@@ -46,6 +47,6 @@ const locations = {
 };
 
 export function init() {
-  //- window.setupFlashNotice(); // FIXME
+  setupFlashNotice();
   mapLib.initMap(locations);
 }

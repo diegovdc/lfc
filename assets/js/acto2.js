@@ -1,3 +1,4 @@
+import { setupFlashNotice } from "./helpers.js";
 import * as mapLib from "./map.js";
 
 const locationsPart1 = {
@@ -19,6 +20,7 @@ const locationsPart1 = {
 };
 
 export function init() {
+  setupFlashNotice();
   mapLib.initMap(locationsPart1);
 }
 
@@ -46,5 +48,6 @@ const locationsPart2 = {
 };
 
 export function init2() {
+  setupFlashNotice();
   mapLib.initMap(locationsPart2);
 }
