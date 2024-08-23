@@ -1,15 +1,27 @@
-h1 Act II - Part 2
+h1=trans2('act2_Part2_0_Title')
 .container
   .buttons
-    button#mxcity.boton Mexico City
-    button#zoomIn.boton zoom in
-    button#casaDeLosPueblos.boton  Casa de los Pueblos &quot;Samir Flores Soberanes&quot;
-    button#zacatepec.boton  Santa Mar&iacute;a Zacatepec
-    button#mexquititlan.boton  Santiago Mexquititl&aacute;n
-    button#atlapulco.boton  San Gregorio Atlapulco
-    a.link-js(data-page='acto2-parte1',href=`/${lang}/acto2-parte1.html`)  Part 1 
-  #flash-notice.flash-notice Click for story
+    button#mxcity.boton=trans2('act2_Part2_1_MexicoCity')
+    button#zoomIn.boton=trans2('act2_Part2_2_zoomIn')
+    button#casaDeLosPueblos.boton=trans2('act2_Part2_3_CasaDeLosPueblos')
+    button#zacatepec.boton=trans2('act2_Part2_4_Zacatepec')
+    button#mexquititlan.boton=trans2('act2_Part2_5_Mexquititlán')
+    button#atlapulco.boton=trans2('act2_Part2_6_Atlapulco')
+    a.link-js(data-page='acto2-parte1',href=`/${lang}/acto2-parte1.html`)=trans2('act2_Part2_7_Part1')
+  #flash-notice.flash-notice=trans2('act2_Part2_8_ClickforStory')
   .mapa-text-container
     .mapaybotones
       #map.mapStyle a map
     #displayArea.displayText
+      div#casaDeLosPueblosDescription.map-text-container
+        p=trans2('act2_Part2_9_CasaDeLosPueblos')
+        p=trans2('act2_Part2_10_CasaDeLosPueblos')
+      div#mexquititlanDescription.map-text-container
+        p=trans2('act2_Part2_11_Mexquititlán')
+      div#zacatepecDescription.map-text-container
+        p=trans2('act2_Part2_12_Zacatepec')
+      div#atlapulcoDescription.map-text-container
+        p=trans2('act2_Part2_13_Atlapulco')
+        p=trans2('act2_Part2_14_Atlapulco')
+        p=trans2('act2_Part2_15_Atlapulco')
+        p=trans2('act2_Part2_16_Atlapulco')

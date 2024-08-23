@@ -1,16 +1,37 @@
-h1 Act III
+h1=trans2('act3_0_Title')
 .container
   .buttons
-    button#mxcity.boton Mexico City
-    button#zoomIn.boton zoom in
-    button#oldAbbey.boton Old location of the San Antonio Abad Textile Workshop
-    button#metro.boton Metro San Antonio Abad
-    button#topeka.boton Topeka Factory Distaster Site
-    button#bolivar.boton Bol&iacute;var and Chimalpopoca
-    button#puntoGozadera.boton Punto Gozadera
-    a.link-js(data-page='epilogo', href=`/${lang}/epilog.html`) Epilogue
-  #flash-notice.flash-notice Click for story
+    button#mxcity.boton=trans2('act3_1_MexicoCity')
+    button#zoomIn.boton=trans2('act3_2_zoomIn')
+    button#oldAbbey.boton=trans2('act3_3_OldlocationSanAntonioAbadTextileWorkshop')
+    button#metro.boton=trans2('act3_4_MetroSanAntonioAbad')
+    button#topeka.boton=trans2('act3_5_TopekaFactoryDisasterSite')
+    button#bolivar.boton=trans2('act3_6_BolívarAndChimalpopoca')
+    button#puntoGozadera.boton=trans2('act3_7_PuntoGozadera')
+    a.link-js(data-page='epilogo', href=`/${lang}/epilog.html`)=trans2('act3_8_Epilogue')
+  #flash-notice.flash-notice=trans2('act3_9_Clickforstory')
   .mapa-text-container
     .mapaybotones
       #map.mapStyle a map
     #displayArea.displayText
+      div#claveDescription.map-text-container
+        p=trans2('act3_10_Clave')
+      div#oldAbbeyDescription.map-text-container
+        p=trans2('act3_11_OldAbbey')
+        p=trans2('act3_12_OldAbbey')
+        p=trans2('act3_13_OldAbbey')
+      div#metroDescription.map-text-container
+        p=trans2('act3_14_Metro')
+        p=trans2('act3_15_Metro')
+      div#topekaDescription.map-text-container
+        p=trans2('act3_16_Topeka')
+        p=trans2('act3_17_Topeka')
+      div#bolivarDescription.map-text-container
+        p=trans2('act3_18_Bolívar')
+        p=trans2('act3_19_Bolívar')
+        p=trans2('act3_20_Bolívar')
+      div#gozaderaDescription.map-text-container
+        p=trans2('act3_21_Gozadera')
+        p=trans2('act3_22_Gozadera')
+        p=trans2('act3_23_Gozadera')
+        p=trans2('act3_24_Gozadera')

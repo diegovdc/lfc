@@ -1,15 +1,24 @@
-h1 Act II - Part 1
+h1=trans2('act2_Part1_1')
 .container
   .buttons
-    button#mxcity.boton Mexico City
-    button#zoomIn.boton zoom in
-    button#atlapulco.boton San Gregorio Atlapulco
-    button#ejido.boton Ejido de San Gregorio Atlapulco
-    button#bloqueo.boton  Site of Blockage
-    a.link-js(data-page='acto2-parte2',href=`/${lang}/acto2-parte2.html`)  Part 2 
-  #flash-notice.flash-notice Click for story
+    button#mxcity.boton=trans2('act2_Part1_2')
+    button#zoomIn.boton=trans2('act2_Part1_3')
+    button#atlapulco.boton=trans2('act2_Part1_4')
+    button#ejido.boton=trans2('act2_Part1_5')
+    button#bloqueo.boton=trans2('act2_Part1_6')
+    a.link-js(data-page='acto2-parte2',href=`/${lang}/acto2-parte2.html`)=trans2('act2_Part1_7') 
+  #flash-notice.flash-notice=trans2('act2_Part1_8')
   .mapa-text-container
     .mapaybotones
       #map.mapStyle a map
     #displayArea.displayText
-  
+      div#atlapulcoDescription.map-text-container
+        p=trans2('act2_Part1_9_Atlapulco')
+        p=trans2('act2_Part1_10_Atlapulco')
+        p=trans2('act2_Part1_11_Atlapulco')
+      div#ejidoDescription.map-text-container
+        p=trans2('act2_Part1_12_Ejido')
+        p=trans2('act2_Part1_13_Ejido')
+      div#bloqueoDescription.map-text-container
+        p=trans2('act2_Part1_14_Bloqueo')
+        p=trans2('act2_Part1_15_Bloqueo')

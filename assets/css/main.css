@@ -124,7 +124,7 @@ body[data-lang="es"] .menu__es {
   display: flex;
 }
 
-body[data-lang="en"] .menu__es {
+body[data-lang="en"] .menu__en {
   display: flex;
 }
 
@@ -212,6 +212,7 @@ a {
   margin-bottom: 32px;
 }
 .boton {
+  cursor: pointer;
   background-color: transparent;
   color: white;
   border-radius: 4px;
