@@ -103,6 +103,7 @@ h1 {
   margin: auto;
   display: none;
   padding-left: 0;
+  margin-bottom: 32px;
 }
 
 body[data-lang="es"] .menu__es {
@@ -126,6 +127,7 @@ body[data-page="/"] .menu-container {
 
 img {
   max-width: 100%;
+  width: 100%;
 }
 
 .waveform-container {
@@ -182,6 +184,15 @@ a {
   @media (max-width: 768px) {
     width: 100%;
     text-align: center;
+  }
+}
+
+.index__first-paragraph {
+  display: flex;
+  gap: 24px;
+  /* under md flex-col */
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 }
 
