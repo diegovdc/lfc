@@ -3,6 +3,7 @@ import * as acto1 from "./acto1.js";
 import * as acto2 from "./acto2.js";
 import * as acto3 from "./acto3.js";
 import * as terremoto from "./terremoto.js";
+import * as epilogo from "./epilogo.js";
 
 const dynamicRoot = document.getElementById("root");
 
@@ -27,6 +28,9 @@ function runPageInitScript(page) {
 
   if (page === "terremoto") {
     terremoto.init();
+  }
+  if (page === "epilogo") {
+    epilogo.init();
   }
 }
 
