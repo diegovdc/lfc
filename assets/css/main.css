@@ -122,6 +122,10 @@ body[data-page="/"] .menu-container {
   display: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 .waveform-container {
   display: none;
   padding: 24px;

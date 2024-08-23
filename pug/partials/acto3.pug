@@ -8,22 +8,24 @@ h1=trans2('act3_0_Title')
     button#topeka.boton=trans2('act3_5_TopekaFactoryDisasterSite')
     button#bolivar.boton=trans2('act3_6_BolívarAndChimalpopoca')
     button#puntoGozadera.boton=trans2('act3_7_PuntoGozadera')
+    //- p=trans2('act3_10_Clave') //- FIXME @Alex esto dónde va?
     a.link-js(data-page='epilogo', href=`/${lang}/epilog.html`)=trans2('act3_8_Epilogue')
   #flash-notice.flash-notice=trans2('act3_9_Clickforstory')
   .mapa-text-container
     .mapaybotones
       #map.mapStyle a map
     #displayArea.displayText
-      div#claveDescription.map-text-container
-        p=trans2('act3_10_Clave')
       div#oldAbbeyDescription.map-text-container
+        img(src="/assets/images/act3-3.jpg")
         p=trans2('act3_11_OldAbbey')
         p=trans2('act3_12_OldAbbey')
         p=trans2('act3_13_OldAbbey')
       div#metroDescription.map-text-container
+        img(src="/assets/images/act3-5.jpg")
         p=trans2('act3_14_Metro')
         p=trans2('act3_15_Metro')
       div#topekaDescription.map-text-container
+        img(src="/assets/images/act3-1.png")
         p=trans2('act3_16_Topeka')
         p=trans2('act3_17_Topeka')
       div#bolivarDescription.map-text-container
