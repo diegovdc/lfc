@@ -31,6 +31,8 @@ function runPageInitScript(page) {
   }
   if (page === "epilogo") {
     epilogo.init();
+  } else {
+    epilogo.stop();
   }
 }
 

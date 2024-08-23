@@ -138,11 +138,15 @@ body[data-page="/"] .menu-container {
   margin: 10px;
   text-align: center;
   line-height: 1.2;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .menu a > span {
   display: block;
+}
+
+.footer {
+  padding-bottom: 20px;
 }
 
 a {
