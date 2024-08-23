@@ -102,6 +102,7 @@ h1 {
   background-color: #00000000;
   margin: auto;
   display: none;
+  padding-left: 0;
 }
 
 body[data-lang="es"] .menu__es {
