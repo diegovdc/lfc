@@ -47,7 +47,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 16px;
 }
 
 .landing-page__title {
@@ -66,30 +65,14 @@ a:hover {
 }
 
 .landing-page__link {
-  background-color: #ffff0077;
   padding: 8px;
-  border-radius: 4px;
-  margin-bottom: 16px;
 }
 
 .landing-page__img {
   width: 100%;
-  max-width: 500px;
+  max-width: 70vh;
   margin-bottom: 16px;
 }
-/* .landing-page__bg {
-  position: relative;
-  height: 80vh;
-  width: 80vh;
-  background-image: url("/assets/images/la-fabrica-colapsada.webp");
-  background-size: contain;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-} */
 
 .leaflet-container {
   height: 600px;
@@ -128,7 +111,41 @@ body[data-lang="en"] .menu__en {
   display: flex;
 }
 
+.menu-container {
+  display: none;
+}
+body[data-lang="es"] .menu-container,
+body[data-lang="es"] .menu-container {
+  display: block;
+}
 body[data-page="/"] .menu-container {
+  display: none;
+}
+
+.waveform-container {
+  display: none;
+  padding: 24px;
+  padding-left: 72px;
+  position: relative;
+}
+
+.player-control {
+  position: absolute;
+  font-size: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  appearance: none;
+  color: yellow;
+  background-color: transparent;
+  /* remove all button styles */
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
+#pause-button.player-control {
   display: none;
 }
 
@@ -145,7 +162,7 @@ body[data-page="/"] .menu-container {
   display: block;
 }
 
-.footer {
+.footer[data-page]:not([data-page="/"]) {
   padding-bottom: 20px;
 }
 

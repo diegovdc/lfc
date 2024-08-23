@@ -2,20 +2,33 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='icon' type='image/png' href='/assets/images/favicon-32x32.png' sizes='32x32')
+  link(rel='icon' type='image/png' href='/assets/images/favicon-16x16.png' sizes='16x16')
   title La Fabrica Colapsada
   link(href='/assets/css/main.css' rel='stylesheet')
   block styles
   link(rel='stylesheet' href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css' integrity='sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=' crossorigin='')
   script(src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js' integrity='sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=' crossorigin='')
+  link(crossorigin="anonymous"
+       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+       rel="stylesheet")
 body
+  #waveform-container.waveform-container
+    button#play-button.player-control
+      i.fa.fa-play
+    button#pause-button.player-control
+      i.fa.fa-pause
+    div
+      #waveform
   include partials/menu.pug
-  audio(id="audio-player")
-    source(src='/assets/audio/no-dither.mp3' type='audio/mpeg')
+  //- audio(id="audio-player")
+  //-   source(src='/assets/audio/no-dither.mp3' type='audio/mpeg')
   #root
     block root
   include partials/menu.pug
   footer.footer
   script(src='/assets/js/index.js', type='module')
+  script(src="https://unpkg.com/wavesurfer.js@7")
   script(src='https://unpkg.com/hydra-synth')
   script.
     console.log(!{JSON.stringify(dbES)});
