@@ -50,7 +50,9 @@ function showWaveformContainer() {
 function startPlayback() {
   showWaveformContainer();
   initWaveSurfer();
-  wavesurfer.play();
+  setTimeout(() => {
+    wavesurfer.play();
+  }, 200);
 }
 
 export { isPlaying, startPlayback, showWaveformContainer };
