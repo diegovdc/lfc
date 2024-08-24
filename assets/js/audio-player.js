@@ -12,6 +12,12 @@ function initWaveSurfer() {
       height: 80,
       waveColor: "#926b8d",
       progressColor: "#FFD700",
+      // Set a bar width
+      barWidth: 2,
+      // Optionally, specify the spacing between bars
+      barGap: 1,
+      // And the bar radius
+      barRadius: 2,
       // TODO update audio, peaks and duration
       url: "/assets/audio/no-dither.mp3",
       peaks: audioPeaks,

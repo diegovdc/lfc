@@ -1,7 +1,10 @@
 let hydra;
 
 export function init() {
-  hydra = new window.Hydra({ detectAudio: false });
+  hydra = new window.Hydra({
+    canvas: document.getElementById("hydra-canvas"),
+    detectAudio: false,
+  });
   noise(4, 0.1, 1.2)
     .modulate(src(o0))
     .add(
@@ -14,7 +17,6 @@ export function init() {
     .modulate(src(o0), 0.05)
     .modulate(voronoi())
     .out();
-  console.log("🚀 ~ init ~ hydra:", hydra);
 }
 
 export function stop() {

@@ -117,11 +117,13 @@ body[data-lang="en"] .menu__en {
 .menu-container {
   display: none;
 }
+
 body[data-lang="es"] .menu-container,
 body[data-lang="es"] .menu-container {
   display: block;
 }
-body[data-page="/"] .menu-container {
+body[data-page="/"] .menu-container,
+body[data-page="epilogo"] .menu-container {
   display: none;
 }
 
@@ -135,6 +137,7 @@ img {
   padding: 24px;
   padding-left: 72px;
   position: relative;
+  z-index: 1;
 }
 
 .player-control {
@@ -284,4 +287,22 @@ a {
   @media (max-width: 768px) {
     opacity: 1;
   }
+}
+
+.epilogue-text-container {
+  padding: 0;
+  position: fixed;
+  top: 120px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  z-index: 2;
+}
+.epilogue-texto {
+  padding: 4px;
+  background-color: rgba(66, 66, 66, 0.3);
 }
