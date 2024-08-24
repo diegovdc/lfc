@@ -13,7 +13,11 @@ export function show(id) {
 
 export function initMap(locations) {
   const lang = document.body.dataset.lang || "es";
-  const map = L.map("map").setView([19.361810914799786, -99.16320173025815], 3);
+  const map = L.map("map", {
+    scrollWheelZoom: false, // Disable scroll wheel zooming to prevent interference with scrolling
+    touchZoom: true, // Enable touch zooming
+    inertia: false, // Optionally disable inertia for smoother control
+  }).setView([19.361810914799786, -99.16320173025815], 3);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 20,
     attribution:
@@ -26,17 +30,18 @@ export function initMap(locations) {
     gradualFly(map, targetLatLng, 3, 11, 0.0085, 1);
   });
 
-  initLocationButtons(map, Object.keys(locations));
+  initLocationButtons(map, locations);
   initZoomInButton(map);
   initCircleMarkers(map, locations, lang);
   return map;
 }
 
-export function initLocationButtons(map, buttonIds) {
+export function initLocationButtons(map, locations) {
+  const buttonIds = Object.keys(locations);
   buttonIds.forEach((buttonId) => {
     document.getElementById(buttonId).addEventListener("click", function () {
-      var targetLatLng = L.latLng(19.361810914799786, -99.16320173025815);
-      gradualMove(map, targetLatLng, 6);
+      var targetLatLng = L.latLng(locations[buttonId].latlan);
+      gradualMove(map, targetLatLng, 1);
       show(buttonId + "Description");
     });
   });
@@ -60,7 +65,9 @@ export function initCircleMarkers(map, locations, lang) {
 }
 
 export function gradualMove(map, targetLatLng, dur) {
-  map.panTo(targetLatLng, { animate: true, duration: dur });
+  map.flyTo(targetLatLng, 15, { animate: true, duration: dur });
+
+  // map.panTo(targetLatLng, { animate: true, duration: dur });
 }
 
 export function gradualFly(
