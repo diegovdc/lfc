@@ -9,8 +9,7 @@ h1=trans2('act2_Part1_1_Title')
     a.link-js(data-page='acto2-parte2',href=`/${lang}/acto2-parte2.html`)=trans2('act2_Part1_7') 
   #flash-notice.flash-notice=trans2('act2_Part1_8')
   .mapa-text-container
-    .mapaybotones
-      #map.mapStyle a map
+    include ./mapa.pug
     #displayArea.displayText
       div#atlapulcoDescription.map-text-container
         img(src="/assets/images/act2-1-1.jpg")

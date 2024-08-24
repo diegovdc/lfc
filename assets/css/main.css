@@ -222,17 +222,33 @@ a {
 .mapa-text-container {
   width: 100%;
   display: flex;
-  @media (max-width: 768px) {
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .mapa-text-container {
     flex-wrap: wrap;
   }
 }
 
+.mapa-container {
+  width: 100%;
+}
+
 .mapaybotones {
   width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
   margin-bottom: 32px;
-  justify-content: center;
+  position: sticky;
+  top: 0; /* Adjust this value as needed */
+}
+
+.mapa {
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .mapaybotones {
+    position: relative;
+  }
 }
 
 .displayText {

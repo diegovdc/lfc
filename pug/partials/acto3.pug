@@ -12,8 +12,7 @@ h1=trans2('act3_0_Title')
     a.link-js(data-page='epilogo', href=`/${lang}/epilog.html`)=trans2('act3_8_Epilogue')
   #flash-notice.flash-notice=trans2('act3_9_Clickforstory')
   .mapa-text-container
-    .mapaybotones
-      #map.mapStyle a map
+    include ./mapa.pug
     #displayArea.displayText
       div#oldAbbeyDescription.map-text-container
         img(src="/assets/images/act3-3.jpg")
