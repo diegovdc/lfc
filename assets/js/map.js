@@ -43,6 +43,13 @@ export function initLocationButtons(map, locations) {
       var targetLatLng = L.latLng(locations[buttonId].latlan);
       gradualMove(map, targetLatLng, 1);
       show(buttonId + "Description");
+      buttonIds.forEach((id) => {
+        if (id === buttonId) {
+          document.getElementById(id).classList.add("selected");
+        } else {
+          document.getElementById(id).classList.remove("selected");
+        }
+      });
     });
   });
 }
