@@ -110,18 +110,16 @@ h1 {
 footer {
   display: none;
 }
-body[data-lang="es"] .menu__es,
-body[data-lang="es"] footer {
-  display: flex;
-}
 
+body[data-lang="es"] .menu__es,
+body[data-lang="es"] footer,
 body[data-lang="en"] .menu__en,
 body[data-lang="en"] footer {
   display: flex;
 }
 
 body[data-lang="es"] .menu-container,
-body[data-lang="es"] .menu-container {
+body[data-lang="en"] .menu-container {
   display: block;
 }
 body[data-page="/"] .menu-container,
