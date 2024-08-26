@@ -5,7 +5,7 @@ export function init() {
     canvas: document.getElementById("hydra-canvas"),
     detectAudio: false,
   });
-  s0.initImage("http://127.0.0.1:5500/assets/images/la-fabrica-colapsada.jpg");
+  s0.initImage("/assets/images/la-fabrica-colapsada.jpg");
   src(s0)
     .modulate(src(o0).scale(1.2), 0.05)
     // .blend(o0)
