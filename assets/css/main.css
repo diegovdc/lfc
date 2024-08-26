@@ -106,16 +106,18 @@ h1 {
   margin-bottom: 32px;
 }
 
-body[data-lang="es"] .menu__es {
-  display: flex;
-}
-
-body[data-lang="en"] .menu__en {
-  display: flex;
-}
-
-.menu-container {
+.menu-container,
+footer {
   display: none;
+}
+body[data-lang="es"] .menu__es,
+body[data-lang="es"] footer {
+  display: flex;
+}
+
+body[data-lang="en"] .menu__en,
+body[data-lang="en"] footer {
+  display: flex;
 }
 
 body[data-lang="es"] .menu-container,
@@ -171,6 +173,10 @@ img {
 
 .menu a > span {
   display: block;
+}
+
+.dash {
+  display: none !important;
 }
 
 body[data-page]:not([data-page="/"]) .footer {
@@ -239,7 +245,7 @@ a {
   width: 100%;
   margin-bottom: 32px;
   position: sticky;
-  top: 0; /* Adjust this value as needed */
+  top: 0;
 }
 
 .mapa {
@@ -321,4 +327,54 @@ a {
 .epilogue-texto {
   padding: 4px;
   background-color: rgba(66, 66, 66, 0.3);
+}
+
+.references-description a {
+  margin-left: 16px;
+}
+
+footer {
+  /* display: flex; */
+  justify-content: center;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+footer .menu-container {
+  padding: 0;
+}
+footer div {
+  width: 50%;
+}
+footer menu.menu > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+footer menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer menu a {
+  display: flex;
+  gap: 4px;
+}
+footer menu a > span.dash {
+  display: inline-block !important;
+}
+
+.follow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.follow a {
+  padding: 8px;
+}
+
+.footer-secondary-links .menu {
+  margin-bottom: 0;
 }

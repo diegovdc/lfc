@@ -25,8 +25,9 @@ body
   //-   source(src='/assets/audio/no-dither.mp3' type='audio/mpeg')
   #root
     block root
-  include partials/menu.pug
   footer.footer
+    include partials/menu.pug
+    include partials/footer-links-pt2.pug
   script(src='/assets/js/index.js', type='module')
   script(src="https://unpkg.com/wavesurfer.js@7")
   script(src='https://unpkg.com/hydra-synth')

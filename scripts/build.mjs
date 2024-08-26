@@ -46,6 +46,8 @@ const pages = [
   "acto2-parte2",
   "acto3",
   "epilogo",
+  "referencias",
+  "creditos",
 ];
 
 function writePartialFile(lang, options, page) {
