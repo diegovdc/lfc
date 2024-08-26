@@ -10,7 +10,7 @@ function initWaveSurfer() {
     wavesurfer = window.WaveSurfer.create({
       container: "#waveform",
       height: 80,
-      waveColor: "#926b8d",
+      waveColor: "#007A3D", //"#926b8d",
       progressColor: "#FFD700",
       // Set a bar width
       barWidth: 2,
