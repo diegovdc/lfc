@@ -30,6 +30,7 @@ function initWaveSurfer() {
       isPlaying = true;
       playButton.style.display = "none";
       pauseButton.style.display = "block";
+      document.body.setAttribute("data-audio-player-shown", "true");
     });
     wavesurfer.on("pause", () => {
       isPlaying = false;

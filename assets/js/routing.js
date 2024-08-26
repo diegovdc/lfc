@@ -1,4 +1,5 @@
 import * as player from "./audio-player.js";
+import * as landingPage from "./landing-page.js";
 import * as acto1 from "./acto1.js";
 import * as acto2 from "./acto2.js";
 import * as acto3 from "./acto3.js";
@@ -10,11 +11,16 @@ const dynamicRoot = document.getElementById("root");
 const loadedPages = {};
 
 function runPageInitScript(page) {
-  console.log("🚀 ~ runPageInitScript ~ page:", page);
   if (player.isPlaying || page !== "/") {
-    console.log("🚀 ~ runPageInitScript ~ showWaveformContainer:");
     player.showWaveformContainer();
   }
+
+  if (page === "/") {
+    landingPage.init();
+  } else {
+    landingPage.stop();
+  }
+
   if (page === "acto1") {
     acto1.init();
   }
