@@ -155,6 +155,10 @@ body[data-page="epilogo"] .menu-container {
   display: none;
 }
 
+.hidden {
+  display: none;
+}
+
 img {
   max-width: 100%;
   width: 100%;
@@ -389,6 +393,9 @@ footer menu a {
 }
 footer menu a > span.dash {
   display: inline-block !important;
+}
+footer menu .hidden {
+  display: flex !important;
 }
 
 .follow {
