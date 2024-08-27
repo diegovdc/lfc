@@ -86,7 +86,7 @@ body[data-audio-player-shown] .landing-page {
 
 @media (max-width: 768px) {
   .landing-page__title {
-    font-size: 60px;
+    font-size: 50px;
   }
 
   .landing-page__link {
