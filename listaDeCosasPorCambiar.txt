@@ -4,9 +4,9 @@
 
 3. Los puntos en el mapa de Datos no estan traducidos (10 fatalities debe de ser 10 fatalidades, etc)
 
-4. Esto https://la-fabrica-colapsada-dev-dvc.netlify.app/es/  lleva a una pagina de introduccion sin menus
+4. DONE Esto https://la-fabrica-colapsada-dev-dvc.netlify.app/es/  lleva a una pagina de introduccion sin menus
 
-5. Observacion: El menu arriba del contenido solo lleva a los actos y a datos. Mientras que el menu de abajo lleva a todos lados (incluyendo introduccion y epilogo). Esta es una muy buena decision de disegno creo yo. AWEBO!
+5. DONE Observacion: El menu arriba del contenido solo lleva a los actos y a datos. Mientras que el menu de abajo lleva a todos lados (incluyendo introduccion y epilogo). Esta es una muy buena decision de disegno creo yo. AWEBO!
 
 6. NOTA: sigo sin escoger las fotos correctas. Pronto hago un push de eso
 

@@ -81,7 +81,10 @@ body[data-audio-player-shown] .landing-page {
   margin-right: 20px;
   color: #c90a01;
   font-family: "Bungee Tint", sans-serif;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: -12px -12px 12px rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
 }
 
 @media (max-width: 768px) {

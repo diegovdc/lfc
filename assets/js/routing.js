@@ -10,12 +10,17 @@ const dynamicRoot = document.getElementById("root");
 
 const loadedPages = {};
 
+function isLangIndexPage(url) {
+  return url === "/es/" || url === "/en/" || url === "/es" || url === "/en";
+}
+
 function runPageInitScript(page) {
+  console.log("🚀 ~ runPageInitScript ~ page:", page);
   if (player.isPlaying || page !== "/") {
     player.showWaveformContainer();
   }
-
-  if (page === "/") {
+  const url = window.location.pathname;
+  if (page === "/" && !isLangIndexPage(url)) {
     landingPage.init();
   } else {
     landingPage.stop();
@@ -48,6 +53,7 @@ function runPageInitScript(page) {
 }
 
 function setPage({ text, page, lang }) {
+  console.log("🚀 ~ setPage ~ page:", page);
   loadedPages[lang + "_" + page] = text;
   dynamicRoot.innerHTML = text;
   document.body.dataset["lang"] = lang;
@@ -102,9 +108,10 @@ function registerLinkClick(e) {
 // Function to handle back navigation
 function handlePopState(event) {
   const state = event.state;
+  const page = isLangIndexPage(window.location.pathname) ? "index" : state.page;
   if (state && state.page) {
     event.preventDefault();
-    loadPage(state.lang, state.page);
+    loadPage(state.lang, page);
   }
 }
 
@@ -154,6 +161,13 @@ function init() {
   const url = window.location.pathname;
   const page = getPageFromUrl(url);
   const initialState = { page };
+  // if page is /es/ or /en/ route to /es/index.html or /en/index.html
+  if (url === "/es/" || url === "/es") {
+    loadPage("es", "index");
+  }
+  if (url === "/en/" || url === "/en") {
+    loadPage("en", "index");
+  }
   history.replaceState(initialState, null, url);
   window.addEventListener("popstate", handlePopState);
   setLinkListeners();
