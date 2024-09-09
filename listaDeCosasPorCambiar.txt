@@ -1,8 +1,8 @@
-1. comenzar y begin se verian mejor con un rectangulo semiopaco negro
+1. DONE comenzar y begin se verian mejor con un rectangulo semiopaco negro
 
-2. **Importante** el ultimo parrafo, etiquetado como index5 del csv (linea 15) no es visible en el indice
+2. DONE **Importante** el ultimo parrafo, etiquetado como index5 del csv (linea 15) no es visible en el indice
 
-3. Los puntos en el mapa de Datos no estan traducidos (10 fatalities debe de ser 10 fatalidades, etc)
+3. DONE Los puntos en el mapa de Datos no estan traducidos (10 fatalities debe de ser 10 fatalidades, etc)
 
 4. DONE Esto https://la-fabrica-colapsada-dev-dvc.netlify.app/es/  lleva a una pagina de introduccion sin menus
 
@@ -10,8 +10,8 @@
 
 6. NOTA: sigo sin escoger las fotos correctas. Pronto hago un push de eso
 
-7. El scroll del mapa dejo de funcionar, es parte del nuevo disegno? En caso de que lo sea, quiza necesitamos un boton de alejar Tambien....
+7. DONE El scroll del mapa dejo de funcionar, es parte del nuevo disegno? En caso de que lo sea, quiza necesitamos un boton de alejar Tambien....
 
-8. Borrar act1_19_LaCasona este texto no debe de ir ahi.
+8. DONE Borrar act1_19_LaCasona este texto no debe de ir ahi.
 
-9. En La Fabrica, el puntit azul, cuando uno le da click, la etiqueta del mapa dice Zacatecas 74. Deberia de decir Bolívar y Chimalpopoca 
+9. DONE En La Fabrica, el puntit azul, cuando uno le da click, la etiqueta del mapa dice Zacatecas 74. Deberia de decir Bolívar y Chimalpopoca 
