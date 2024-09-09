@@ -17,7 +17,7 @@ export function initMap(locations) {
     scrollWheelZoom: false, // Disable scroll wheel zooming to prevent interference with scrolling
     touchZoom: true, // Enable touch zooming
     inertia: false, // Optionally disable inertia for smoother control
-  }).setView([19.361810914799786, -99.16320173025815], 3);
+  }).setView([19.361810914799786, -99.16320173025815], 9);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 20,
     attribution:
@@ -67,6 +67,14 @@ export function initCircleMarkers(map, locations, lang) {
       .bindPopup(value[lang], { radius: value.radius || 0.1 })
       .on("click", function () {
         show(buttonId + "Description");
+        const buttonIds = Object.keys(locations);
+        buttonIds.forEach((id) => {
+          if (id === buttonId) {
+            document.getElementById(id).classList.add("selected");
+          } else {
+            document.getElementById(id).classList.remove("selected");
+          }
+        });
       });
   });
 }
