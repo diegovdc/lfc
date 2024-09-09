@@ -11,7 +11,10 @@ export function show(id) {
   shownId = id;
 }
 
-export function initMap(locations) {
+export function initMap(
+  locations,
+  { zoomIn, showMXCity = true, locationButtons = true } = {}
+) {
   const lang = document.body.dataset.lang || "es";
   const map = L.map("map", {
     scrollWheelZoom: false, // Disable scroll wheel zooming to prevent interference with scrolling
@@ -24,15 +27,22 @@ export function initMap(locations) {
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
 
-  document.getElementById("mxcity").addEventListener("click", function () {
-    var targetLatLng = L.latLng(19.361810914799786, -99.16320173025815);
-    // if distance is less than X then pan else fly
-    gradualFly(map, targetLatLng, 3, 11, 0.0085, 1);
-  });
+  if (showMXCity) {
+    document.getElementById("mxcity").addEventListener("click", function () {
+      var targetLatLng = L.latLng(19.361810914799786, -99.16320173025815);
+      // if distance is less than X then pan else fly
+      gradualFly(map, targetLatLng, 3, 11, 0.0085, 1);
+    });
+  }
 
-  initLocationButtons(map, locations);
-  initZoomInButton(map);
+  if (locationButtons) {
+    initLocationButtons(map, locations);
+  }
+  // initZoomInButton(map);
   initCircleMarkers(map, locations, lang);
+  if (zoomIn) {
+    map.zoomIn(zoomIn);
+  }
   return map;
 }
 
@@ -65,6 +75,7 @@ export function initCircleMarkers(map, locations, lang) {
     L.circleMarker(value.latlan)
       .addTo(map)
       .bindPopup(value[lang], { radius: value.radius || 0.1 })
+      .setStyle(value.style || {})
       .on("click", function () {
         show(buttonId + "Description");
         const buttonIds = Object.keys(locations);

@@ -18,8 +18,8 @@ const locations = {
     latlan: [19.414905456991544, -99.13533510405162],
   },
   bolivar: {
-    en: "Zacatecas 74",
-    es: "Zacatecas 74",
+    en: "Bolivar and Chimalpopoca",
+    es: "Bolívar y Chimalpopoca",
     latlan: [19.42257963096786, -99.13966766085785],
   },
   puntoGozadera: {
