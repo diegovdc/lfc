@@ -96,6 +96,8 @@ writeFileSync(
   renderFile("./pug/partials/landing-page.pug", options)
 );
 
+writeFileSync(`./dist/404.html`, renderFile("./pug/404.pug", options));
+
 // copy assets dir into dist/assets
 mkdirSync("./dist/assets", { recursive: true });
 cpSync("./assets", "./dist/assets", { recursive: true });
