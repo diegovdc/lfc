@@ -367,6 +367,10 @@ a {
   margin-left: 16px;
 }
 
+.references-link {
+  word-wrap: break-word;
+}
+
 footer {
   /* display: flex; */
   justify-content: space-evenly;
