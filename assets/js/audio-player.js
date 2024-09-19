@@ -19,10 +19,11 @@ function initWaveSurfer() {
       // And the bar radius
       barRadius: 2,
       // TODO update audio, peaks and duration
-      url: "/assets/audio/no-dither.mp3",
+      url: "/assets/audio/la-fabrica-colapsada_Piraran_Master_Online-render.mp3",
       peaks: audioPeaks,
       duration: 1408.626939,
     });
+    // console.log("wavesurfer", wavesurfer);
     wavesurfer.on("click", () => {
       wavesurfer.play();
     });
