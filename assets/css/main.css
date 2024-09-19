@@ -350,16 +350,13 @@ a {
 
 .epilogue-text-container {
   padding: 0;
-  position: fixed;
-  top: 120px;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 8px;
   z-index: 2;
+  overflow: auto;
 }
 .epilogue-texto {
   padding: 4px;
@@ -372,17 +369,21 @@ a {
 
 footer {
   /* display: flex; */
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 16px;
   padding-top: 8px;
+}
+
+@media (max-width: 500px) {
+  footer {
+    flex-wrap: wrap;
+  }
 }
 
 footer .menu-container {
   padding: 0;
 }
-footer div {
-  width: 50%;
-}
+
 footer menu.menu > div {
   width: 100%;
   display: flex;
