@@ -19,7 +19,7 @@ function initWaveSurfer() {
       // And the bar radius
       barRadius: 2,
       // TODO update audio, peaks and duration
-      url: "/assets/audio/la-fabrica-colapsada_Piraran_Master_Online-render.mp3",
+      url: "/assets/audio/la-fabrica-colapsada_Piraran_Master_OK.mp3",
       peaks: audioPeaks,
       duration: 1408.626939,
     });
