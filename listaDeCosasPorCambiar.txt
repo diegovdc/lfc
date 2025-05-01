@@ -1,3 +1,11 @@
+-- BUGS
+
+En el footer de la version en ingles, la intro y el epilogo estan en espagnol y linkean al usuario a la version ene spagnol de la pagina dejandolos sin el chance de seguir explorando en ingles.
+
+
+
+-- cosas por cambiar
+
 1. DONE comenzar y begin se verian mejor con un rectangulo semiopaco negro
 
 2. DONE **Importante** el ultimo parrafo, etiquetado como index5 del csv (linea 15) no es visible en el indice
